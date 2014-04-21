@@ -10,26 +10,26 @@
   </div>
   <div class="form-group">
     <label for="passengerName">Passenger Name</label>
-    <input type="text" class="form-control" id="passengerName" placeholder="Passenger Name" autofocus>
+    <input type="text" data-ng-model="bookingDetails.passengerName" class="form-control" id="passengerName" placeholder="Passenger Name" autofocus>
   </div>
   <div class="row">
     <div class="form-group col-md-6">
       <label for="passengerMobile">Passenger Mobile</label>
-      <input type="text" class="form-control" id="passengerMobile" placeholder="Passenger Mobile">
+      <input type="text" data-ng-model="bookingDetails.passengerMobile"  class="form-control" id="passengerMobile" placeholder="Passenger Mobile">
     </div>
     <div class="form-group col-md-6">
       <label for="passengerAltMobile">Passenger Alternate Mobile</label>
-      <input type="text" class="form-control" id="passengerAltMobile" placeholder="Passenger Alternate Mobile">
+      <input type="text" data-ng-model="bookingDetails.passengerAltMobile" class="form-control" id="passengerAltMobile" placeholder="Passenger Alternate Mobile">
     </div>
   </div>
   <div class="row">
     <div class="form-group col-md-6">
       <label for="pickupFrom">From</label>
-      <input type="text" class="form-control" id="pickupFrom" placeholder="Select Origin">
+      <input type="text" data-ng-model="bookingDetails.pickupPlace" class="form-control" id="pickupFrom" placeholder="Select Origin">
     </div>
     <div class="form-group col-md-6">
       <label for="pickupTo">To</label>
-      <input type="text" class="form-control" id="pickupTo" placeholder="Select Destination">
+      <input type="text" data-ng-model="bookingDetails.dropPlace" class="form-control" id="pickupTo" placeholder="Select Destination">
     </div>
   </div>
   <div class="row">
@@ -39,24 +39,24 @@
     </div>
     <div class="form-group col-md-6">
       <label for="landmark1">Landmark</label>
-      <input type="text" class="form-control" id="landmark1" placeholder="Please enter landmark">
+      <input type="text" data-ng-model="bookingDetails.landmark1"  class="form-control" id="landmark1" placeholder="Please enter landmark">
     </div>
   </div>
   <div class="row">
     <div class="form-group col-md-6">
-      <label for="vehicle">Vehicle</label>
-      <input type="text" class="form-control" id="vehicle" placeholder="Select Vehicle">
+      <label for="vehicle">Vehicle</label>      
+      <select class="form-control" data-ng-model="bookingDetails.vehicleName" data-ng-options="obj.id as obj.vehicleName for obj in vehicleNames" placeholder="Select Vehicle"></select>
     </div>
     <div class="form-group col-md-6">
       <label for="package">Package</label>
-      <input type="text" class="form-control" id="package" placeholder="Select Package">
+      <select class="form-control" data-ng-model="bookingDetails.tariffId" data-ng-options="obj.id as obj.packageName for obj in packages" placeholder="Select Vehicle"></select>
     </div>
   </div>
   <div class="row">
     <div class="form-group col-md-12">
       <label for="comments">Comments</label>
-      <textarea id="comments" class="form-control"></textarea>
+      <textarea id="comments" data-ng-model="bookingDetails.comments"  class="form-control"></textarea>
     </div>
   </div>
-  <button type="submit" class="btn btn-warning">Save</button>
+  <button type="submit" class="btn btn-warning" data-ng-click="fnSaveBooking()">Save</button>
 </form>
