@@ -26,6 +26,9 @@ angular.module('sigmaAgentApp')
 			pickupTime : ''
 		};
 
+		// scope.dpCurrentDate = PrerequisiteService.fgGetCurrentDate();
+		// scope.dpCurrentPlusSevenDate = PrerequisiteService.fgGetCurrentDate();
+
 		scope.vehicleNames = PrerequisiteService.fnGetVehicleNames();
 		scope.packages = PrerequisiteService.fnGetPackages();
 

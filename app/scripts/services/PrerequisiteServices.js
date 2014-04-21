@@ -76,6 +76,12 @@
                         'id' : '6',
                         'packageName' : 'Ramoji to Airport'
                     }];
+                },
+                fgGetCurrentDate : function() {
+                    var oDt = new Date(),
+                        sDt = oDt.getFullYear() + '-' + ( oDt.getMonth()<= 9 ? '0' + oDt.getMonth(): oDt.getMonth()) + '-'  +( oDt.getDate()<= 9 ? '0' + oDt.getDate(): oDt.getDate()) ;
+
+                    return sDt;
                 }
             }
     });
