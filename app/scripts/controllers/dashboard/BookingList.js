@@ -11,6 +11,8 @@ angular.module('sigmaAgentApp')
 	.controller('BookingList', function($scope, $rootScope, serverService) {
 		var scope = $scope;
 
+		scope.currentMonthGridDetails = [];
+
 		var oData = {
               "bookingStatus" : [4], // send as an array.
               'nextHours' : "3"
@@ -19,8 +21,8 @@ angular.module('sigmaAgentApp')
 		
 
 		scope.setBookingMgmtGrid_Success = function(data) {
-			console.log(data);
-			alert('Success');
+			console.log(data.data);
+			scope.currentMonthGridDetails = data.data;
 		};
 
 		scope.setBookingMgmtGrid_Error = function() {
@@ -29,50 +31,41 @@ angular.module('sigmaAgentApp')
 
 		serverService.sendData('P','dispatcher/getAllBookings', oData, scope.setBookingMgmtGrid_Success, scope.setBookingMgmtGrid_Error);
 
-		scope.currentMonthGridDetails = [{
-			'bookingCode': '1',
-			'bookingNo': '1',
-			'vacantTime': '20',
-			'startTime': '11:20 PM',
-			'dropTime': '12:20 PM',
-			'totalKms': '1120',
-			'amount': '1500',
-			'deadMileage': '5'
-		}];
 
 		scope.gridCurrentMonthData = {
 			data: 'currentMonthGridDetails',
 			rowHeight: 20,
 			columnDefs: [{
 				field: 'bookingCode',
-				displayName: 'B.No',
-				headerTitle: 'Booking No.'
+				displayName: 'Booking Code'
 			}, {
 				field: 'vacantTime',
-				displayName: 'V.T',
-				headerTitle: 'Vacant Time'
+				displayName: 'Booking Date & Time'
 			}, {
 				field: 'deadMileage',
-				displayName: 'D.ML',
-				headerTitle: 'Dead Mileage',
+				displayName: 'Pickup Date & Time',
 				cellFilter: 'number'
 			}, {
 				field: 'startTime',
-				displayName: 'S.T',
-				headerTitle: 'Start Time'
+				displayName: 'Passenger Name'
 			}, {
 				field: 'dropTime',
-				displayName: 'D.T',
-				headerTitle: 'Drop Time'
+				displayName: 'Pickup Place'
 			}, {
 				field: 'totalKms',
-				displayName: 'T.kms',
-				headerTitle: 'Total Kms.',
+				displayName: 'Drop Place',
 				cellFilter: 'number'
 			}, {
 				field: 'amount',
-				displayName: 'Amount',
-				headerTitle: 'Amount',
+				displayName: 'Vehicle Name',
+				cellFilter: 'number'
+			}, {
+				field: 'totalKms',
+				displayName: 'Status',
+				cellFilter: 'number'
+			}, {
+				field: 'amount',
+				displayName: 'Action',
 				cellFilter: 'number'
 			}],
 			enablePaging: false,
