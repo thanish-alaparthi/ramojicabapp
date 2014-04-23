@@ -11,6 +11,11 @@ angular.module('sigmaAgentApp')
 	.controller('BookingForm', function($scope, $rootScope, serverService, PrerequisiteService) {
 		var scope = $scope;
 
+		scope.vehicleNames = PrerequisiteService.fnGetVehicleNames();
+		scope.hours = angular.copy(PrerequisiteService.hours);
+		scope.minutes = angular.copy(PrerequisiteService.minutes);
+		scope.packages = PrerequisiteService.fnGetPackages();
+
 		scope.bookingDetails = {
 			id : '',
 			passengerName : '',
@@ -26,11 +31,13 @@ angular.module('sigmaAgentApp')
 			pickupTime : ''
 		};
 
+		// set default hour and minutes
+		scope.bookingDetails.pickupHours = "10";
+		scope.bookingDetails.pickupMinutes = "00";
+
 		// scope.dpCurrentDate = PrerequisiteService.fgGetCurrentDate();
 		// scope.dpCurrentPlusSevenDate = PrerequisiteService.fgGetCurrentDate();
 
-		scope.vehicleNames = PrerequisiteService.fnGetVehicleNames();
-		scope.packages = PrerequisiteService.fnGetPackages();
 
 		scope.fnSaveBooking = function() {
 			if(! scope.fnIsValidBooking()) {

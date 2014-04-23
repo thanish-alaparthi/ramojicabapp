@@ -12,7 +12,8 @@ angular.module('sigmaAgentApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ngGrid'
+  'ngGrid',
+  'xtForm'
 ])
   .config(function ($routeProvider) {
     $routeProvider

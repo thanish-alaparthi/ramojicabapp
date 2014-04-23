@@ -287,9 +287,9 @@
         var validator = new InputValidator(scope, element, attrs, ngModel, formCtrl);
         xtFormCtrl.validators.registerValidator(attrs.name, validator);
         element.on('$destroy', function() {
-          if (xtFormCtrl.validators.hasValidator(attrs.name)) {
+          /*if (xtFormCtrl.validators.hasValidator(attrs.name)) {
             xtFormCtrl.validators.deregisterValidator(attrs.name);
-          }
+          }*/
         });
       }
     };
