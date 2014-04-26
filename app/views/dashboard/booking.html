@@ -1,5 +1,5 @@
 <h2 class="page-header">Cab Booking</h2>
-<form role="form" xt-form="form" novalidate>
+<form name="bookingFormContainer" role="form" xt-form="form" novalidate>
   <div class="form-group">
     <label class="radio-inline">
       <input type="radio" name="tripType" value="oneway" checked> One Way
@@ -25,17 +25,17 @@
   <div class="row">
     <div class="form-group col-md-6">
       <label for="pickupFrom">From</label>
-      <input type="text" data-ng-model="bookingDetails.pickupPlace" class="form-control" id="pickupFrom" placeholder="Select Origin">
+      <input type="text" data-ng-model="bookingDetails.pickupPlace" class="form-control" id="pickupFrom" placeholder="Select Origin" xt-validate required name="pickupFrom">
     </div>
     <div class="form-group col-md-6">
       <label for="pickupTo">To</label>
-      <input type="text" data-ng-model="bookingDetails.dropPlace" class="form-control" id="pickupTo" placeholder="Select Destination">
+      <input type="text" data-ng-model="bookingDetails.dropPlace" class="form-control" id="pickupTo" placeholder="Select Destination" xt-validate required name="pickupTo">
     </div>
   </div>
   <div class="row">
     <div class="form-group col-md-3">
       <label for="pickupDateTime">Date</label>
-      <input type="text" datepicker data-ng-model="bookingDetails.pickupDate" class="form-control" id="pickupDate" placeholder="Pickup Date">
+      <input type="text" datepicker data-ng-model="bookingDetails.pickupDate" class="form-control" id="pickupDate" placeholder="Pickup Date" xt-validate required name="pickupDate">
     </div>
     <div class="form-group col-md-3">
       <div class="row">

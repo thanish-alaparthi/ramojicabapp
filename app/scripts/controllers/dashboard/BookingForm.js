@@ -17,18 +17,18 @@ angular.module('sigmaAgentApp')
 		scope.packages = PrerequisiteService.fnGetPackages();
 
 		scope.bookingDetails = {
-			id : '',
-			passengerName : '',
-			passengerMobile : '',
-			passengerAltMobile : '',
-			pickupPlace : '',
-			dropPlace : '',
-			landmark1 : '',
-			tariffId : '1',
-			comments : '',
-			vehicleName : '1',
-			pickupDate : '',
-			pickupTime : ''
+			id: '',
+			passengerName: '',
+			passengerMobile: '',
+			passengerAltMobile: '',
+			pickupPlace: '',
+			dropPlace: '',
+			landmark1: '',
+			tariffId: '1',
+			comments: '',
+			vehicleName: '1',
+			pickupDate: '',
+			pickupTime: ''
 		};
 
 		// set default hour and minutes
@@ -38,42 +38,47 @@ angular.module('sigmaAgentApp')
 		// scope.dpCurrentDate = PrerequisiteService.fgGetCurrentDate();
 		// scope.dpCurrentPlusSevenDate = PrerequisiteService.fgGetCurrentDate();
 
+		/*scope.bookingFormContainer = {
+			onSubmit: function(isValid) {
+				if (isValid) {
+					alert('do post...');
+				}
+			}
+		};*/
 
 		scope.fnSaveBooking = function() {
-			if(! scope.fnIsValidBooking()) {
+			if (!scope.fnIsValidBooking()) {
 				return;
 			}
-
-
 		};
 
 		scope.fnIsValidBooking = function() {
 			var bd = scope.bookingDetails;
-			if($.trim(bd.passengerName) == '') {
+			if ($.trim(bd.passengerName) == '') {
 				alert('Passenger name is required.');
 				return false;
 			}
-			if($.trim(bd.passengerMobile) == '') {
+			if ($.trim(bd.passengerMobile) == '') {
 				alert('Passenger mobile is required.');
 				return false;
 			}
-			if($.trim(bd.pickupPlace) == '') {
+			if ($.trim(bd.pickupPlace) == '') {
 				alert('Pickup place is required.');
 				return false;
 			}
-			if($.trim(bd.dropPlace) == '') {
+			if ($.trim(bd.dropPlace) == '') {
 				alert('Drop place is required.');
 				return false;
 			}
-			if($.trim(bd.pickupDate) == '') {
+			if ($.trim(bd.pickupDate) == '') {
 				alert('Pickup date is required.');
 				return false;
 			}
-			if($.trim(bd.pickupDate) == '') {
+			if ($.trim(bd.pickupDate) == '') {
 				alert('Pickup date is required.');
 				return false;
 			}
-			if($.trim(bd.pickupTime) == '') {
+			if ($.trim(bd.pickupTime) == '') {
 				alert('Pickup time is required.');
 				return false;
 			}
