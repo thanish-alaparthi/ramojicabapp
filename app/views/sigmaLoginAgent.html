@@ -7,18 +7,31 @@
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
         </ul> -->
-        <h3 class="text-muted dashboard-head loginLogo"></h3>
+    <a class="sigma-logo-medium" href="javascript:void(0);"></a>
+    <h3 class="text-muted dashboard-head loginLogo"></h3>
     </div>
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" class="form-control" placeholder="Username" ng-model="loginUserName" required autofocus>
-        <input type="password" class="form-control" placeholder="Password" ng-model="loginPassword" required>
-        <button class="btn btn-lg btn-primary btn-block" data-ng-click="fnSignIn();">Sign in</button>
+        <h2 class="form-signin-heading">Welcome to Sigma Cabs, Please Login</h2>
+        <form name="changePasswordContainer" role="form" xt-form="form" novalidate>
+            <div class="form-group">
+              <label for="loginUserName">Username</label>
+              <input type="text" data-ng-model="loginUserName" class="form-control" id="loginUserName" name="loginUserName" placeholder="Username" autofocus xt-validate required>
+            </div>
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <input type="password" data-ng-model="loginPassword" class="form-control" id="loginPassword" name="loginPassword" placeholder="Password" xt-validate required>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" data-ng-click="fnSignIn();">Sign in</button>
+        </form>
+        <!-- <input type="text" class="form-control" placeholder="Username" ng-model="loginUserName" required autofocus>
+        <input type="password" class="form-control" placeholder="Password" ng-model="loginPassword" required> -->
 
     </div> <!-- /container -->
 
 <div class="login-notice">
-  <h4>Area restricted</h4>
-The intent of this notice is to let unauthorized users know they are not welcome to enter our systems. In fact, our employees, clients and other authorities who work on our behalf already know that we monitor and record all activity and by proceeding with login, they agree that they understand and consent to policies. If we find evidence of unauthorized activity on our systems, we will provide such evidence to local, state or federal law agencies.
+    <h4>Restricted Area</h4>
+    <p>
+        The intent of this notice is to let unauthorized users know they are not welcome to enter our systems. In fact, our employees, clients and other authorities who work on our behalf already know that we monitor and record all activity and by proceeding with login, they agree that they understand and consent to policies. If we find evidence of unauthorized activity on our systems, we will provide such evidence to local, state or federal law agencies.
+    </p>
 </div>
 
 

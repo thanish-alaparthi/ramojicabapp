@@ -74,6 +74,14 @@ body {
 	width: 150px;
 }
 
+.sigma-logo-medium {
+  background: url(../images/sigma_cabs_logo.png) no-repeat;
+  display: block;
+  height: 75px;
+  margin: 15px auto;
+  width: 187px;
+}
+
 /*
  * Main content
  */
@@ -116,4 +124,7 @@ textarea {
 .xt-error:focus {
   border: 1px solid red;
   box-shadow: 0 0 2px red;
+}
+.login-notice {
+  margin-top: 80px;
 }

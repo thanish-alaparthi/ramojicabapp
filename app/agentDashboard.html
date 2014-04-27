@@ -46,16 +46,49 @@
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class="active"><a href="javascript:void(0);">Services</a></li>
+              <li><a href="javascript:void(0);">Reports</a></li>
               <li class="dropdown">
                 <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="javascript:void(0);">Change Password</button></li>
+                  <li><a href="javascript:void(0);" data-toggle="modal" data-target="#myModal">Change Password</button></li>
                   <li class="divider"></li>
                   <li  data-ng-click="fnLogout();"><a href="javascript:void(0);">Logout</a></li>
                 </ul>
               </li>
             </ul>
             <a class="sigma-logo" href="javascript:void(0);"></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal - This should go in a view -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" id="myModalLabel">Change Password</h4>
+            </div>
+            <div class="modal-body">
+              <form name="changePasswordContainer" role="form" xt-form="form" novalidate>
+                <div class="form-group">
+                  <label for="oldPwd">Current Password</label>
+                  <input type="password" data-ng-model="changePwd.oldPwd" class="form-control" id="oldPwd" name="oldPwd" placeholder="Current Password" autofocus xt-validate required>
+                </div>
+                <div class="form-group">
+                  <label for="newPwd">New Password</label>
+                  <input type="password" data-ng-model="changePwd.newPwd" class="form-control" id="newPwd" name="newPwd" placeholder="New Password" xt-validate required>
+                </div>
+                <div class="form-group">
+                  <label for="confirmPwd">Confirm Password</label>
+                  <input type="password" data-ng-model="changePwd.confirmPwd" class="form-control" id="confirmPwd" name="confirmPwd" placeholder="Confirm Password" xt-validate required>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
           </div>
         </div>
       </div>
